@@ -64,7 +64,7 @@
 }
 
 /*
- * Desktop-only sunset video behind the page (Pexels, free licence), see components/DesktopBackdrop.
+ * Desktop-only beach-and-city video behind the page (Pexels, free licence), see components/DesktopBackdrop.
  * The poster photo is a CSS background inside a min-width media query, so phones never download
  * it. The centre is washed out so content stays readable; the side margins show the footage.
  */
@@ -78,7 +78,7 @@
     inset: 0;
     z-index: -10;
     pointer-events: none;
-    background: url("/videos/city-sunset-poster.jpg") center / cover no-repeat;
+    background: url("/videos/beach-city-poster.jpg") center / cover no-repeat;
   }
   .desktop-wash {
     position: absolute;

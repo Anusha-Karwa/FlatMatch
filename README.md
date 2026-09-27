@@ -120,6 +120,6 @@ Import the GitHub repo in Vercel, add the env vars above before the first deploy
 
 ## Credits
 
-Background video and photo (`public/videos/city-sunset.mp4`, and its first frame `city-sunset-poster.jpg`): "Scenic sunset view over city river skyline" from [Pexels](https://www.pexels.com/video/scenic-sunset-view-over-city-river-skyline-38697718/), free to use under the Pexels licence. It plays at half speed. Visitors with reduced-motion or data-saver turned on see the photo instead of the video.
+Background video and photo (`public/videos/beach-city.mp4`, and its first frame `beach-city-poster.jpg`): "Aerial view of the beach and city" from [Pexels](https://www.pexels.com/video/aerial-view-of-the-beach-and-city-20599406/), free to use under the Pexels licence. Its turquoise water matches the #4AD1C4 brand colour. It plays at half speed. Visitors with reduced-motion or data-saver turned on see the photo instead of the video.
 
 On desktop (1024px and wider) the same video also fills the page background, behind a soft wash that keeps the content readable. Phones never download it.

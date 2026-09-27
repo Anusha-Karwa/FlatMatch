@@ -2,11 +2,11 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const VIDEO_SRC = "/videos/city-sunset.mp4";
+const VIDEO_SRC = "/videos/beach-city.mp4";
 const PLAYBACK_RATE = 0.5;
 
 /**
- * Full-screen sunset skyline video behind the page on desktop (1024px+) only. The poster photo
+ * Full-screen beach-and-city video behind the page on desktop (1024px+) only. The poster photo
  * comes from CSS inside a media query, so phones download neither. Reduced-motion and data-saver
  * visitors keep the still photo.
  */

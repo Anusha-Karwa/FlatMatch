@@ -2,14 +2,14 @@
 
 import { useEffect, useRef, useState } from "react";
 
-const VIDEO_SRC = "/videos/city-sunset.mp4";
-const POSTER_SRC = "/videos/city-sunset-poster.jpg";
+const VIDEO_SRC = "/videos/beach-city.mp4";
+const POSTER_SRC = "/videos/beach-city-poster.jpg";
 /** Slowed down so the footage drifts calmly behind the text. */
 const PLAYBACK_RATE = 0.5;
 
 /**
  * City backdrop behind the green banners: a still photo (the video's first frame), with the
- * looping sunset skyline footage (Pexels, free licence) fading in on top once it can play.
+ * looping beach-and-city footage (Pexels, free licence) fading in on top once it can play.
  * Reduced-motion and data-saver visitors get the photo only.
  */
 export function BackgroundVideo({ className = "" }: { className?: string }) {
