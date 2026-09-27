@@ -3,9 +3,9 @@
 import { useEffect, useState } from "react";
 
 /**
- * Looping aerial city footage behind the green banners (Pexels, free licence).
- * Skipped for reduced-motion and data-saver users; they keep the plain green gradient.
- * Fades in only once it can play, so the gradient never flashes to black.
+ * City backdrop behind the green banners: a still photo (the video's first frame), with the
+ * looping aerial footage (Pexels, free licence) fading in on top once it can play.
+ * Reduced-motion and data-saver visitors get the photo only.
  */
 export function BackgroundVideo({ className = "" }: { className?: string }) {
   const [enabled, setEnabled] = useState(false);
@@ -17,19 +17,26 @@ export function BackgroundVideo({ className = "" }: { className?: string }) {
     setEnabled(!reduceMotion && !saveData);
   }, []);
 
-  if (!enabled) return null;
+  const layer = `pointer-events-none absolute inset-0 h-full w-full object-cover ${className}`;
   return (
-    <video
-      className={`pointer-events-none absolute inset-0 h-full w-full object-cover transition-opacity duration-1000 ${ready ? "opacity-100" : "opacity-0"} ${className}`}
-      src="/videos/skyline.mp4"
-      autoPlay
-      muted
-      loop
-      playsInline
-      preload="auto"
-      aria-hidden
-      tabIndex={-1}
-      onCanPlay={() => setReady(true)}
-    />
+    <>
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img src="/videos/skyline-poster.jpg" alt="" aria-hidden className={layer} decoding="async" />
+      {enabled && (
+        <video
+          className={`${layer} transition-opacity duration-1000 ${ready ? "opacity-100" : "opacity-0"}`}
+          src="/videos/skyline.mp4"
+          poster="/videos/skyline-poster.jpg"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          aria-hidden
+          tabIndex={-1}
+          onCanPlay={() => setReady(true)}
+        />
+      )}
+    </>
   );
 }

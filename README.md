@@ -120,4 +120,4 @@ Import the GitHub repo in Vercel, add the env vars above before the first deploy
 
 ## Credits
 
-Background video (`public/videos/skyline.mp4`): "Aerial view of urban cityscape during daytime" from [Pexels](https://www.pexels.com/video/aerial-view-of-urban-cityscape-during-daytime-35854278/), free to use under the Pexels licence. It's skipped for visitors with reduced-motion or data-saver turned on.
+Background video and photo (`public/videos/skyline.mp4`, and its first frame `skyline-poster.jpg`): "Aerial view of urban cityscape during daytime" from [Pexels](https://www.pexels.com/video/aerial-view-of-urban-cityscape-during-daytime-35854278/), free to use under the Pexels licence. Visitors with reduced-motion or data-saver turned on see the photo instead of the video.
