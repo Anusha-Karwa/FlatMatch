@@ -22,6 +22,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${sans.variable} ${display.variable}`}>
       <body className="flex min-h-screen flex-col">
+        <div className="desktop-backdrop" aria-hidden />
         <header className="sticky top-0 z-30 border-b border-brand-900/5 bg-white/80 backdrop-blur-md">
           <div className="container-page flex items-center justify-between py-3">
             <Link href="/" className="flex items-center gap-2.5">
