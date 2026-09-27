@@ -120,6 +120,6 @@ Import the GitHub repo in Vercel, add the env vars above before the first deploy
 
 ## Credits
 
-Background video and photo (`public/videos/skyline.mp4`, and its first frame `skyline-poster.jpg`): "Aerial view of urban cityscape during daytime" from [Pexels](https://www.pexels.com/video/aerial-view-of-urban-cityscape-during-daytime-35854278/), free to use under the Pexels licence. Visitors with reduced-motion or data-saver turned on see the photo instead of the video.
+Background video and photo (`public/videos/city-sunset.mp4`, and its first frame `city-sunset-poster.jpg`): "Scenic sunset view over city river skyline" from [Pexels](https://www.pexels.com/video/scenic-sunset-view-over-city-river-skyline-38697718/), free to use under the Pexels licence. It plays at half speed. Visitors with reduced-motion or data-saver turned on see the photo instead of the video.
 
 Desktop background photo (`public/images/pune-aerial.jpg`): aerial view of Pune from [Pexels](https://www.pexels.com/photo/aerial-photography-of-buildings-under-blue-sky-and-clouds-5972982/), free to use under the Pexels licence. It's only loaded on screens 1024px and wider.
