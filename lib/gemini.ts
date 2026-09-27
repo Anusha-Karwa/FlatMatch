@@ -18,7 +18,7 @@ function model(systemInstruction: string) {
   const key = process.env.GEMINI_API_KEY;
   if (!key) throw new Error("GEMINI_API_KEY is not set");
   return new GoogleGenerativeAI(key).getGenerativeModel({
-    model: process.env.GEMINI_MODEL || "gemini-2.5-flash",
+    model: process.env.GEMINI_MODEL || "gemini-flash-latest",
     systemInstruction,
     generationConfig: { responseMimeType: "application/json", temperature: 0.2 },
   });

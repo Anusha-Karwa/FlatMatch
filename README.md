@@ -110,7 +110,7 @@ If you edit `lib/seed-listings.ts`, run `npm run seed:sql` to regenerate the see
 | `NEXT_PUBLIC_SUPABASE_URL` | yes (for persistence) | Supabase project URL |
 | `SUPABASE_SERVICE_ROLE_KEY` | yes (for persistence) | **Server-only.** Never prefix with `NEXT_PUBLIC_`, and never commit it. |
 | `GEMINI_API_KEY` | optional | Enables "Explain tradeoffs" and "Paste listing" |
-| `GEMINI_MODEL` | optional | Defaults to `gemini-2.5-flash` |
+| `GEMINI_MODEL` | optional | Defaults to `gemini-flash-latest` (always the current Flash model) |
 
 `.env*` files are git-ignored except `.env.example`.
 
