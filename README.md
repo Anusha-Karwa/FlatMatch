@@ -117,3 +117,7 @@ If you edit `lib/seed-listings.ts`, run `npm run seed:sql` to regenerate the see
 ## Deploy (Vercel)
 
 Import the GitHub repo in Vercel, add the env vars above before the first deploy, then click Deploy. Every push to `main` redeploys.
+
+## Credits
+
+Background video (`public/videos/skyline.mp4`): "Aerial view of urban cityscape during daytime" from [Pexels](https://www.pexels.com/video/aerial-view-of-urban-cityscape-during-daytime-35854278/), free to use under the Pexels licence. It's skipped for visitors with reduced-motion or data-saver turned on.

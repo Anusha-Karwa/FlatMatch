@@ -1,4 +1,5 @@
 import { Skyline } from "@/components/Art";
+import { BackgroundVideo } from "@/components/BackgroundVideo";
 import { HomeActions } from "@/components/HomeActions";
 import { AREAS } from "@/lib/commute";
 import { SEED_LISTINGS } from "@/lib/seed-listings";
@@ -12,9 +13,11 @@ const steps = [
 export default function Home() {
   return (
     <div className="space-y-8">
-      <section className="relative overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-700 via-brand-500 to-brand-600 px-6 pb-28 pt-9 text-white shadow-lift sm:px-10 sm:pt-12">
-        <div className="pointer-events-none absolute -right-16 -top-16 h-64 w-64 rounded-full bg-sand-300/20 blur-3xl" />
-        <Skyline className="pointer-events-none absolute inset-x-0 bottom-0 h-32 w-full sm:h-40" seed="hero" />
+      <section className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-700 via-brand-500 to-brand-600 px-6 pb-28 pt-9 text-white shadow-lift sm:px-10 sm:pt-12">
+        <BackgroundVideo className="-z-20" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-800/85 via-brand-600/60 to-brand-700/80" />
+        <div className="pointer-events-none absolute -right-16 -top-16 -z-10 h-64 w-64 rounded-full bg-sand-300/20 blur-3xl" />
+        <Skyline className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 w-full sm:h-40" seed="hero" />
         <div className="relative max-w-xl">
           <p className="eyebrow text-sand-200">Flat hunting for three · Pune</p>
           <h1 className="mt-3 font-display text-[2.1rem] font-semibold leading-[1.1] sm:text-5xl">
