@@ -5,6 +5,7 @@ import { useState } from "react";
 import { api } from "@/lib/client";
 import { AREAS, type Area } from "@/lib/commute";
 import { AMENITIES, NICE_TO_HAVE_LABELS, type Amenity, type Furnishing, type ListingInput } from "@/lib/types";
+import { PageBanner } from "./PageBanner";
 
 interface FormState {
   title: string;
@@ -126,13 +127,9 @@ export function ListingForm({ code, geminiEnabled }: { code: string; geminiEnabl
 
   return (
     <div className="space-y-4">
-      <div>
-        <Link href={`/g/${code}`} className="text-sm text-brand-700">
-          ← Group {code}
-        </Link>
-        <h1 className="mt-1 text-2xl font-bold">Add a listing</h1>
-        <p className="text-sm text-gray-600">It&apos;s checked against everyone&apos;s requirements automatically, and shows up in results if it fits.</p>
-      </div>
+      <PageBanner backHref={`/g/${code}`} backLabel={`Group ${code}`} eyebrow="New listing" title="Add a flat you found">
+        It&apos;s checked against everyone&apos;s requirements automatically, and shows up in results if it fits.
+      </PageBanner>
 
       {saved && (
         <div className="card space-y-2 border-brand-200 bg-brand-50">
@@ -272,7 +269,7 @@ function NumberField(props: { id: string; label: string; value: string; onChange
 
 function Check({ label, checked, onChange }: { label: string; checked: boolean; onChange: (v: boolean) => void }) {
   return (
-    <label className="flex cursor-pointer items-center justify-between rounded-xl bg-gray-50 px-3 py-2.5 text-sm">
+    <label className="flex cursor-pointer items-center justify-between rounded-2xl bg-brand-50/60 px-3 py-2.5 text-sm">
       {label}
       <input type="checkbox" className="h-5 w-5 accent-brand-600" checked={checked} onChange={(e) => onChange(e.target.checked)} />
     </label>

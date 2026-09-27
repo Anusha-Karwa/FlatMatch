@@ -7,6 +7,7 @@ import { api, getEditToken, setEditToken } from "@/lib/client";
 import { AREAS, type Area } from "@/lib/commute";
 import { inr } from "@/lib/format";
 import { NICE_TO_HAVES, NICE_TO_HAVE_LABELS, type Anchor, type Furnishing, type NiceToHave, type Preferences } from "@/lib/types";
+import { PageBanner } from "./PageBanner";
 
 interface MemberForm {
   name: string;
@@ -105,15 +106,9 @@ export function PreferencesForm({ code, slot }: { code: string; slot: number }) 
 
   return (
     <form onSubmit={submit} className="space-y-4">
-      <div>
-        <Link href={`/g/${code}`} className="text-sm text-brand-700">
-          ← Group {code}
-        </Link>
-        <h1 className="mt-1 text-2xl font-bold">{info.name}&apos;s requirements</h1>
-        <p className="text-sm text-gray-600">
-          🔒 Private. The others won&apos;t see this until all three of you have submitted. Be honest: it saves arguments later.
-        </p>
-      </div>
+      <PageBanner backHref={`/g/${code}`} backLabel={`Group ${code}`} eyebrow="Private form" title={`${info.name}'s requirements`}>
+        🔒 The others won&apos;t see this until all three of you have submitted. Be honest: it saves arguments later.
+      </PageBanner>
 
       <section className="card space-y-2">
         <label className="section-title" htmlFor="maxRent">
@@ -161,7 +156,7 @@ export function PreferencesForm({ code, slot }: { code: string; slot: number }) 
           <p className="hint">Office, gym, family… and the longest one-way commute you&apos;d accept at peak time.</p>
         </div>
         {prefs.anchors.map((a, i) => (
-          <div key={i} className="space-y-2 rounded-xl bg-gray-50 p-3">
+          <div key={i} className="space-y-2 rounded-2xl bg-brand-50/60 p-3">
             <div className="flex gap-2">
               <input
                 className="input"
@@ -311,7 +306,7 @@ export function PreferencesForm({ code, slot }: { code: string; slot: number }) 
 
 function Toggle({ label, checked, onChange }: { label: string; checked: boolean; onChange: (v: boolean) => void }) {
   return (
-    <label className="flex cursor-pointer items-center justify-between rounded-xl bg-gray-50 px-3 py-2.5">
+    <label className="flex cursor-pointer items-center justify-between rounded-2xl bg-brand-50/60 px-3 py-2.5">
       <span className="text-sm">{label}</span>
       <input type="checkbox" className="h-5 w-5 accent-brand-600" checked={checked} onChange={(e) => onChange(e.target.checked)} />
     </label>

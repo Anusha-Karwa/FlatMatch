@@ -4,8 +4,11 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { api } from "@/lib/client";
 
+type Tab = "start" | "join";
+
 export function HomeActions() {
   const router = useRouter();
+  const [tab, setTab] = useState<Tab>("start");
   const [names, setNames] = useState(["Riya", "Meera", "Kavita"]);
   const [code, setCode] = useState("");
   const [busy, setBusy] = useState<"create" | "demo" | null>(null);
@@ -42,58 +45,72 @@ export function HomeActions() {
     if (c) router.push(`/g/${c}`);
   }
 
+  const tabClass = (t: Tab) =>
+    `flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
+      tab === t ? "bg-brand-500 text-white shadow-sm" : "text-brand-800 hover:bg-brand-50"
+    }`;
+
   return (
     <div className="space-y-4">
-      {error && <p className="rounded-xl bg-red-50 p-3 text-sm text-red-700">{error}</p>}
-
-      <form onSubmit={create} className="card space-y-3">
-        <div>
-          <h2 className="section-title">Start a group</h2>
-          <p className="hint">You get a link and a short code to send on WhatsApp. No login needed.</p>
+      <div className="card shadow-lift sm:p-7">
+        <div className="mb-5 flex gap-1 rounded-full bg-brand-50 p-1" role="tablist">
+          <button type="button" role="tab" aria-selected={tab === "start"} className={tabClass("start")} onClick={() => setTab("start")}>
+            Start a group
+          </button>
+          <button type="button" role="tab" aria-selected={tab === "join"} className={tabClass("join")} onClick={() => setTab("join")}>
+            I have a code
+          </button>
         </div>
-        <div className="grid gap-2 sm:grid-cols-3">
-          {names.map((n, i) => (
-            <div key={i}>
-              <label className="label" htmlFor={`name-${i}`}>
-                Flatmate {i + 1}
-              </label>
-              <input
-                id={`name-${i}`}
-                className="input"
-                value={n}
-                maxLength={30}
-                required
-                onChange={(e) => setNames(names.map((x, k) => (k === i ? e.target.value : x)))}
-              />
+
+        {error && <p className="mb-3 rounded-2xl bg-red-50 p-3 text-sm text-red-700">{error}</p>}
+
+        {tab === "start" ? (
+          <form onSubmit={create} className="space-y-4">
+            <p className="text-sm text-gray-600">Name the three flatmates. You&apos;ll get a link and a code to share on WhatsApp.</p>
+            <div className="grid gap-3 sm:grid-cols-3">
+              {names.map((n, i) => (
+                <div key={i}>
+                  <label className="label" htmlFor={`name-${i}`}>
+                    Flatmate {i + 1}
+                  </label>
+                  <input
+                    id={`name-${i}`}
+                    className="input"
+                    value={n}
+                    maxLength={30}
+                    required
+                    onChange={(e) => setNames(names.map((x, k) => (k === i ? e.target.value : x)))}
+                  />
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <button className="btn-primary w-full" disabled={busy !== null}>
-          {busy === "create" ? "Creating…" : "Create group"}
-        </button>
-      </form>
+            <button className="btn-primary w-full py-3 text-base" disabled={busy !== null}>
+              {busy === "create" ? "Creating…" : "Create group →"}
+            </button>
+          </form>
+        ) : (
+          <form onSubmit={join} className="space-y-4">
+            <p className="text-sm text-gray-600">Enter the 6-character code from your group chat.</p>
+            <input
+              className="input text-center font-mono text-2xl uppercase tracking-[0.4em]"
+              placeholder="K7PQ2M"
+              value={code}
+              maxLength={6}
+              onChange={(e) => setCode(e.target.value)}
+              aria-label="Group code"
+              autoFocus
+            />
+            <button className="btn-primary w-full py-3 text-base">Open group →</button>
+          </form>
+        )}
+      </div>
 
-      <form onSubmit={join} className="card">
-        <h2 className="section-title mb-2">Got a group code?</h2>
-        <div className="flex gap-2">
-          <input
-            className="input uppercase tracking-widest"
-            placeholder="e.g. K7PQ2M"
-            value={code}
-            maxLength={6}
-            onChange={(e) => setCode(e.target.value)}
-            aria-label="Group code"
-          />
-          <button className="btn-secondary shrink-0">Open</button>
+      <div className="flex flex-col items-start gap-3 rounded-3xl border border-sand-200 bg-sand-50 p-5 sm:flex-row sm:items-center sm:justify-between">
+        <div>
+          <p className="font-display text-lg font-semibold text-brand-950">Just exploring?</p>
+          <p className="text-sm text-gray-600">All three forms pre-filled from the case study, so you see results instantly.</p>
         </div>
-      </form>
-
-      <div className="card border-dashed bg-brand-50/60">
-        <h2 className="section-title">Just exploring?</h2>
-        <p className="hint mb-3">
-          Creates a group with the Riya / Meera / Kavita case study already filled in, so you can see results straight away.
-        </p>
-        <button onClick={loadDemo} className="btn-secondary w-full" disabled={busy !== null}>
+        <button onClick={loadDemo} className="btn-sand w-full shrink-0 sm:w-auto" disabled={busy !== null}>
           {busy === "demo" ? "Loading…" : "Load sample group (Riya, Meera, Kavita)"}
         </button>
       </div>
