@@ -17,9 +17,9 @@ export function PageBanner({
   children?: React.ReactNode;
 }) {
   return (
-    <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-brand-600 via-brand-500 to-brand-700 px-5 pb-16 pt-5 text-white shadow-lift sm:px-7">
+    <section className="relative isolate overflow-hidden rounded-3xl bg-gradient-to-br from-brand-700 via-brand-600 to-brand-800 px-5 pb-16 pt-5 text-white shadow-lift sm:px-7">
       <BackgroundVideo className="-z-20" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-700/85 via-brand-600/70 to-brand-800/85" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-800/85 via-brand-700/65 to-brand-900/85" />
       <Skyline className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-24 w-full" seed={eyebrow ?? "banner"} />
       <div className="relative">
         {backHref && (

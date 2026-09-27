@@ -47,7 +47,7 @@ export function HomeActions() {
 
   const tabClass = (t: Tab) =>
     `flex-1 rounded-full px-4 py-2 text-sm font-semibold transition ${
-      tab === t ? "bg-brand-500 text-white shadow-sm" : "text-brand-800 hover:bg-brand-50"
+      tab === t ? "bg-brand-500 text-brand-950 shadow-sm" : "text-brand-800 hover:bg-brand-50"
     }`;
 
   return (

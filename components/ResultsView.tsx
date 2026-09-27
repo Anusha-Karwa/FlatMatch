@@ -195,7 +195,7 @@ function PeopleTable({ people }: { people: PersonBreakdown[] }) {
       {people.map((p) => (
         <div key={p.slot} className="grid gap-2.5 p-3.5 sm:grid-cols-[7rem_1fr_1fr]">
           <div className="flex items-center gap-2.5 sm:flex-col sm:items-start">
-            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-500 font-display text-sm font-semibold text-white">
+            <span className="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-500 font-display text-sm font-semibold text-brand-950">
               {p.name.charAt(0).toUpperCase()}
             </span>
             <div className="flex flex-1 items-center justify-between gap-2 sm:block">

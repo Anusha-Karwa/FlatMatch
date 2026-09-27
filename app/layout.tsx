@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
-  themeColor: "#2e8b57",
+  themeColor: "#4ad1c4",
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
@@ -29,7 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <Link href="/" className="flex items-center gap-2.5">
               <LogoMark />
               <span className="font-display text-xl font-semibold text-brand-900">
-                Flat<span className="text-brand-500">Match</span>
+                Flat<span className="text-brand-600">Match</span>
               </span>
             </Link>
             <span className="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">
@@ -45,8 +45,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <Skyline
             className="absolute inset-x-0 top-0 h-20 w-full"
             seed="footer"
-            back="rgba(46,139,87,0.16)"
-            front="rgba(46,139,87,0.26)"
+            back="rgba(74,209,196,0.14)"
+            front="rgba(74,209,196,0.24)"
             windows="rgba(220,189,128,0.35)"
           />
           <div className="container-page relative flex flex-col items-center gap-2 pb-8 pt-24 text-center">

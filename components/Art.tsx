@@ -14,9 +14,9 @@ function rng(seed: string) {
 export function LogoMark({ className = "h-9 w-9" }: { className?: string }) {
   return (
     <svg viewBox="0 0 40 40" className={className} aria-hidden>
-      <rect width="40" height="40" rx="12" fill="#2e8b57" />
-      <path d="M8 21 20 10l12 11" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
-      <path d="M12 19v11h16V19" fill="none" stroke="#fff" strokeWidth="2.6" strokeLinejoin="round" />
+      <rect width="40" height="40" rx="12" fill="#4ad1c4" />
+      <path d="M8 21 20 10l12 11" fill="none" stroke="#0b3431" strokeWidth="2.6" strokeLinecap="round" strokeLinejoin="round" />
+      <path d="M12 19v11h16V19" fill="none" stroke="#0b3431" strokeWidth="2.6" strokeLinejoin="round" />
       <circle cx="16.5" cy="24" r="2" fill="#dcbd80" />
       <circle cx="23.5" cy="24" r="2" fill="#dcbd80" />
       <path d="M16.5 24h7" stroke="#dcbd80" strokeWidth="1.6" />
@@ -103,10 +103,10 @@ export function Skyline({
 }
 
 const PALETTES = [
-  { sky: ["#dff1e6", "#f7efe0"], tower: "#2e8b57", side: "#1f5e3c" },
-  { sky: ["#e4eef0", "#f3f1ea"], tower: "#3b7f6b", side: "#285a4c" },
-  { sky: ["#f5ecd9", "#e3f1e7"], tower: "#2a6f4a", side: "#1b4c32" },
-  { sky: ["#e6f0e3", "#eef3f6"], tower: "#468f68", side: "#2f6a4b" },
+  { sky: ["#dcf6f2", "#f7efe0"], tower: "#2fb3a6", side: "#1d6560" },
+  { sky: ["#e4eef0", "#f3f1ea"], tower: "#3aa39a", side: "#1f5f5b" },
+  { sky: ["#f5ecd9", "#e0f5f2"], tower: "#259c91", side: "#1a524e" },
+  { sky: ["#e3f5f1", "#eef3f6"], tower: "#4ab8ad", side: "#22706a" },
 ];
 
 /**
@@ -185,7 +185,7 @@ export function PropertyArt({
         );
       })}
       {hasLift && <rect x={tx + towerW + 3} y={top + 12} width={6} height={ground - top - 12} fill="#ffffff" opacity={0.35} />}
-      <rect y={ground} width={W} height={H - ground} fill="#cfe3d5" />
+      <rect y={ground} width={W} height={H - ground} fill="#cdebe6" />
       {[tx - 30, tx + towerW + 36, 60, 290].map((x, i) => (
         <g key={i}>
           <rect x={x - 1.5} y={ground - 10} width={3} height={10} fill="#6b5a3e" />

@@ -283,7 +283,7 @@ export function PreferencesForm({ code, slot }: { code: string; slot: number }) 
                       aria-checked={w === i}
                       title={i === 0 ? "Don't care" : `Weight ${i}`}
                       onClick={() => setWeight(k, i as 0 | 1 | 2 | 3)}
-                      className={`w-9 py-1.5 font-semibold ${w === i ? "bg-brand-600 text-white" : "bg-white text-gray-600 hover:bg-brand-50"}`}
+                      className={`w-9 py-1.5 font-semibold ${w === i ? "bg-brand-500 text-brand-950" : "bg-white text-gray-600 hover:bg-brand-50"}`}
                     >
                       {lbl}
                     </button>

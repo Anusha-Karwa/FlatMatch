@@ -13,9 +13,9 @@ const steps = [
 export default function Home() {
   return (
     <div className="space-y-8">
-      <section className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-700 via-brand-500 to-brand-600 px-6 pb-28 pt-9 text-white shadow-lift sm:px-10 sm:pt-12">
+      <section className="relative isolate overflow-hidden rounded-[2rem] bg-gradient-to-br from-brand-800 via-brand-600 to-brand-700 px-6 pb-28 pt-9 text-white shadow-lift sm:px-10 sm:pt-12">
         <BackgroundVideo className="-z-20" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-800/85 via-brand-600/60 to-brand-700/80" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-br from-brand-900/85 via-brand-700/60 to-brand-800/85" />
         <div className="pointer-events-none absolute -right-16 -top-16 -z-10 h-64 w-64 rounded-full bg-sand-300/20 blur-3xl" />
         <Skyline className="pointer-events-none absolute inset-x-0 bottom-0 -z-10 h-32 w-full sm:h-40" seed="hero" />
         <div className="relative max-w-xl">

@@ -5,19 +5,19 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Sea green brand (500 = #2E8B57)
+        // Aqua brand (500 = #4AD1C4). Light shades carry dark text; 700+ carry white text.
         brand: {
-          50: "#eff8f2",
-          100: "#d9efe1",
-          200: "#b5dfc6",
-          300: "#86c9a3",
-          400: "#55ad7d",
-          500: "#2e8b57",
-          600: "#257549",
-          700: "#1f5e3c",
-          800: "#1b4c32",
-          900: "#163e2a",
-          950: "#0c2418",
+          50: "#effcfa",
+          100: "#d2f6f2",
+          200: "#a6ece5",
+          300: "#74dfd4",
+          400: "#5ed8cc",
+          500: "#4ad1c4",
+          600: "#259c91",
+          700: "#1f7f77",
+          800: "#1d6560",
+          900: "#1a524e",
+          950: "#0b3431",
         },
         // Warm sand accent for price tags and highlights
         sand: {
