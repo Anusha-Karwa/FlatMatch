@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import { Fraunces, Plus_Jakarta_Sans } from "next/font/google";
 import Link from "next/link";
 import { LogoMark, Skyline } from "@/components/Art";
+import { DesktopBackdrop } from "@/components/DesktopBackdrop";
 import "./globals.css";
 
 const sans = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-sans", display: "swap" });
@@ -22,7 +23,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en" className={`${sans.variable} ${display.variable}`}>
       <body className="flex min-h-screen flex-col">
-        <div className="desktop-backdrop" aria-hidden />
+        <DesktopBackdrop />
         <header className="sticky top-0 z-30 border-b border-brand-900/5 bg-white/80 backdrop-blur-md">
           <div className="container-page flex items-center justify-between py-3">
             <Link href="/" className="flex items-center gap-2.5">

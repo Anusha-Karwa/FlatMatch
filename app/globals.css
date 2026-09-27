@@ -64,28 +64,33 @@
 }
 
 /*
- * Desktop-only photo behind the page (Pexels, free licence). Defined as a CSS background inside
- * a min-width media query so phones never download it. The centre is washed out so content
- * stays readable; the empty side margins show the photo.
+ * Desktop-only sunset video behind the page (Pexels, free licence), see components/DesktopBackdrop.
+ * The poster photo is a CSS background inside a min-width media query, so phones never download
+ * it. The centre is washed out so content stays readable; the side margins show the footage.
  */
+.desktop-backdrop {
+  display: none;
+}
 @media (min-width: 1024px) {
   .desktop-backdrop {
+    display: block;
     position: fixed;
     inset: 0;
     z-index: -10;
     pointer-events: none;
-    background-image:
-      linear-gradient(
-        90deg,
-        rgba(245, 247, 243, 0.12) 0,
-        rgba(245, 247, 243, 0.12) calc(50% - 34rem),
-        rgba(245, 247, 243, 0.88) calc(50% - 24rem),
-        rgba(245, 247, 243, 0.88) calc(50% + 24rem),
-        rgba(245, 247, 243, 0.12) calc(50% + 34rem),
-        rgba(245, 247, 243, 0.12) 100%
-      ),
-      url("/images/pune-aerial.jpg");
-    background-size: cover;
-    background-position: center 38%;
+    background: url("/videos/city-sunset-poster.jpg") center / cover no-repeat;
+  }
+  .desktop-wash {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(245, 247, 243, 0.1) 0,
+      rgba(245, 247, 243, 0.1) calc(50% - 34rem),
+      rgba(245, 247, 243, 0.88) calc(50% - 24rem),
+      rgba(245, 247, 243, 0.88) calc(50% + 24rem),
+      rgba(245, 247, 243, 0.1) calc(50% + 34rem),
+      rgba(245, 247, 243, 0.1) 100%
+    );
   }
 }
